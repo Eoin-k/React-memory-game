@@ -5,7 +5,6 @@ import Cards from "./components/cards";
 
 function App() {
 	function dataFromCards(score) {
-		console.log(score, " passed to app ");
 		setScore(score);
 		if (highScore <= score) {
 			SetHighScore(score);
