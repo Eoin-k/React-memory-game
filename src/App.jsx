@@ -1,19 +1,26 @@
-import { useState } from 'react'
-import './App.css'
+import { useState } from "react";
+import Header from "./components/header";
+import "./index.css";
+import Cards from "./components/cards";
 
 function App() {
-  const [count, setCount] = useState(0)
-
-  return (
-    <>
-      <h1>Memory Card Game</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-      </div>
-    </>
-  )
+	function dataFromCards(score) {
+		console.log(score, " passed to app ");
+		setScore(score);
+		if (highScore <= score) {
+			SetHighScore(score);
+		}
+	}
+	const [score, setScore] = useState(0);
+	const [highScore, SetHighScore] = useState(0);
+	return (
+		<>
+			<Header score={score} highScore={highScore} />
+			<div className="card-container">
+				<Cards getGameInfo={dataFromCards} />
+			</div>
+		</>
+	);
 }
 
-export default App
+export default App;
